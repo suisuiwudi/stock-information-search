@@ -1,0 +1,17 @@
+
+                      <td><a href="javascript:void(0)" ng-click="submitSymbol(list.symbol)">{{list.symbol}}</a></td>
+                        <td>{{list.close}}</td>
+                        <td>
+                            <div style="color: rgb(41,253,47);" ng-show="list.change>0">
+                                
+                                {{list.change}} ({{list.changepercent}}%)
+                                <img style="width:15px;" src="http://cs-server.usc.edu:45678/hw/hw6/images/Green_Arrow_Up.png">
+                            </div>
+                            <div style="color: rgb(252,13,27);" ng-show="list.change<=0">
+                                
+                                {{list.change}} ({{list.changepercent}}%)
+                                <img style="width:15px;" src="http://cs-server.usc.edu:45678/hw/hw6/images/Red_Arrow_Down.png">
+                            </div>
+                        </td>
+                        <td>{{list.volume}}</td>
+                        <td><button type="button" class="btn btn-default" ng-click="removeSymbol(list.symbol)"><span class="glyphicon glyphicon-trash"></span></button></td>

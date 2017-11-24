@@ -1,0 +1,85 @@
+<div class="column">
+	<div clas="col-sm-3">
+        <div class="d-flex" layout="row">
+            <div class="mr-auto p-2">
+            <h4> Stock Details </h4>
+            </div>
+            
+            <div class="p-2">
+            <button ng-class="{active: isFavorite }" id="changeFavorite" type="button" class="btn btn-default" ng-model="favorite" ng-click="isFavorite = changeFavorite()" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false" ng-disabled="!loader['Table'] || err['Table']">
+            	<span ng-show="!isFavorite" class="glyphicon glyphicon-star" aria-hidden="true"></span> 
+				<span ng-show="isFavorite" class="glyphicon glyphicon-star" style="color: rgb(253,214,68)" aria-hidden="true"></span> 
+			</button>  
+            </div>
+            <div class="p-2">
+            <button type="button" style="padding: 4px 9px 4px 9px" class="btn btn-default" ng-model="facebook" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" ng-disabled="!loader[tabs.activeTab] || err[tabs.activeTab]" ng-click="feedFB()">
+				<img src="http://cs-server.usc.edu:45678/hw/hw8/images/facebook.png" style="width:25px">
+			</button>   
+            </div>
+            <div class="fb-share-button" 
+			    data-href="http://www.your-domain.com/your-page.html" 
+			    data-layout="button_count">
+			  </div>
+        </div>
+    </div>
+<table ng-show="loader['Table'] && !err['Table']" st-table="rowCollection" class="table table-striped col-sm-9">
+	<tbody>
+	<tr>
+		<th>Stock Ticker Symbol</th>
+		<td>{{tabledata.symbol}}</td>
+	</tr>
+	<tr>
+		<th>Last Price</th>
+		<td>{{tabledata.close}}</td>
+	</tr>
+	<tr>
+		<th>Change (Change Percent)</th>
+		<td>
+			<div style="color: rgb(41,253,47);" ng-show="tabledata.change>0">
+				
+				{{tabledata.change}} ({{tabledata.changepercent}}%)
+				<img style="width:15px;" src="http://cs-server.usc.edu:45678/hw/hw6/images/Green_Arrow_Up.png">
+			</div>
+			<div style="color: rgb(252,13,27);" ng-show="tabledata.change<=0">
+				
+				{{tabledata.change}} ({{tabledata.changepercent}}%)
+				<img style="width:15px;" src="http://cs-server.usc.edu:45678/hw/hw6/images/Red_Arrow_Down.png">
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<th>Timestamp</th>
+		<td>{{tabledata.timestamp}}</td>
+	</tr>
+	<tr>
+		<th>Open</th>
+		<td>{{tabledata.open}}</td>
+	</tr>
+	<tr>
+		<th>Previous Close</th>
+		<td>{{tabledata.previousclose}}</td>
+	</tr>
+	<tr>
+		<th>Day's Range</th>
+		<td>{{tabledata.low}} - {{tabledata.high}}</td>
+	</tr>
+	<tr>
+		<th>Volume</th>
+		<td>{{tabledata.volume}}</td>
+	</tr>
+	</tbody>
+</table>    
+<div style="margin-top: 54px">
+<div class="loading" ng-show="!loader['Table'] && !err['Table']">
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+  </div>
+</div>
+</div>
+
+<div ng-show="err['Table']" class="alert alert-danger" >Error! Failed to get Stock details data.</div>
+</div>
+
+
+</div>

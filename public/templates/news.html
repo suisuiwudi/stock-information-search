@@ -1,0 +1,21 @@
+<div class="loading" ng-show="!loader['News'] && !err['News']">
+<div class="progress">
+  <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+  </div>
+</div>
+</div>
+<div ng-show="err['News']" class="alert alert-danger" >Error! Failed to get news data.</div>
+<div ng-show="loader['News'] && !err['News']" class="output" style="width: 100%; margin: 0 auto">
+	<div ng-repeat="new in News">
+		<div class="alert alert-secondary" role="alert">
+			<a href="{{new.link}}" target="_blank"><h4>{{new.title}}</h4></a>
+			</br>
+			<span><b>Author: {{new.author}}</b></span> 
+			</br>
+			</br>
+			<span><b>Date: {{new.pubDate}}</b><time datetime="{{new.pubDate}}"></time></span> 
+		</div>
+	</div>
+</div>
+

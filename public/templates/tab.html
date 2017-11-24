@@ -1,0 +1,4 @@
+<div bs-active-pane="tabs.activeTab" bs-tabs style="width:100%">
+    <div ng-repeat="tab in tabs" data-title="{{ tab.title }}" name="{{ tab.title }}" ng-include="tab.template" bs-pane>
+    </div>
+</div>

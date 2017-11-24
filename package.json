@@ -1,0 +1,37 @@
+{
+  "name": "stock-todo",
+  "version": "0.0.1",
+  "description": "Stock Information",
+  "main": "server.js",
+  "author": "Rui",
+  "private": true,
+  "dependencies": {
+    "angular": "1.5.1",
+    "angular-animate": "1.5.1",
+    "angular-aria": "1.5.1",
+    "angular-material": "1.1.5",
+    "angular-messages": "1.5.1",
+    "angular-strap": "2.3.12",
+    "angular-ui-bootstrap": "2.5.0",
+    "aws-sdk": "latest",
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "cors": "latest",
+    "debug": "latest",
+    "ejs": "latest",
+    "express": "latest",
+    "method-override": "latest",
+    "moment": "^2.19.1",
+    "moment-timezone": "latest",
+    "morgan": "latest",
+    "request": "latest",
+    "xml2js": "latest",
+    "serve-favicon": "latest",
+    "angularjs-table": "latest",
+    "angular-smart-table": "latest",
+    "svg-assets-cache": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
