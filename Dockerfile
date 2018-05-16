@@ -1,6 +1,6 @@
 FROM node:carbon
 
-COPY package*.js .
+COPY package*.json .
 
 RUN npm install
 
