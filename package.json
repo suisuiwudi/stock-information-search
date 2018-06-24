@@ -29,7 +29,11 @@
     "serve-favicon": "latest",
     "angularjs-table": "latest",
     "angular-smart-table": "latest",
-    "svg-assets-cache": "latest"
+    "svg-assets-cache": "latest",
+    "cheerio": "latest",
+    "mongodb": "latest",
+    "mongodb-stitch": "latest",
+    "csv-parse":"latest"
   },
   "scripts": {
     "start": "node server.js"
